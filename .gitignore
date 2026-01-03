@@ -1,0 +1,12 @@
+# Executable files
+*.exe
+
+# Object files
+*.obj
+
+# Debug files
+*.ilk
+*.pdb
+
+# Optional build output
+app

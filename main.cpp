@@ -1,59 +1,75 @@
-#include <iostream>
-#include <string>
+#include <iostream> // براي cin و cout
+#include <string>   // براي string (فعلا استفاده نميشه ولي بعدا نياز ميشه)
+
 using namespace std;
 
 int main()
 {
-    // منوی فروشگاه
+
     int number_menu;
-    cout << "Store Management System" << endl;
-    cout << "1. Add new product" << endl;
-    cout << "2. Show all products" << endl;
-    cout << "3. Show inventory value" << endl;
-    cout << "4. Show low stock products" << endl;
-    cout << "5. Search by product name" << endl;
-    cout << "6. Save data to file" << endl;
-    cout << "7. Load data from file" << endl;
-    cout << "8. Show products sorted by price" << endl;
-    cout << "9. Exit" << endl;
-    cin >> number_menu;
 
-    switch (number_menu)
+    while (true)
     {
-    // 1. ورود کالای جدید
-    case 1:
-    {
-        string product_name;
-        int product_price;
-        int product_number;
+        // چاپ منو
+        cout << "\n----- Store Management System -----\n";
+        cout << "1. Add new product\n";
+        cout << "2. Display products\n";
+        cout << "3. Display inventory value\n";
+        cout << "4. Display low stock\n";
+        cout << "5. Search product\n";
+        cout << "6. Save data\n";
+        cout << "7. Load data\n";
+        cout << "8. Sort products\n";
+        cout << "9. Exit\n";
+        cout << "Choose an option: ";
 
-        cout << "Add new product" << endl;
+        // گرفتن انتخاب کاربر
+        cin >> number_menu;
 
-        cout << "Enter product name: ";
-        cin >> product_name;
+        switch (number_menu)
+        {
 
-        cout << "Enter product price: ";
-        cin >> product_price;
-
-        cout << "Enter product quantity: ";
-        cin >> product_number;
-
-        // ذخیره اطلاعات
-        int save;
-        cout << "Enter 0 to save information" << endl;
-        cin >> save;
-
-        if (save == 0)
+        case 1:
+            // اضافه کردن کالا (بعدا پياده‌سازي مي‌شود)
             break;
-        else
-            cout << "Invalid input.";
 
-        break;
-    }
+        case 2:
+            // نمايش کالاها
+            break;
 
-    default:
-        cout << "Invalid input.";
-        break;
+        case 3:
+            // نمايش ارزش موجودي
+            break;
+
+        case 4:
+            // نمايش کالاهاي کم موجود
+            break;
+
+        case 5:
+            // جستجو بر اساس نام کالا
+            break;
+
+        case 6:
+            // ذخيره اطلاعات در فايل
+            break;
+
+        case 7:
+            // بارگذاري اطلاعات از فايل
+            break;
+
+        case 8:
+            // مرتب سازي کالاها
+            break;
+
+        case 9:
+            // خروج از برنامه
+            cout << "Exiting program...\n";
+            return 0;
+
+        default:
+            // اگر گزينه نامعتبر وارد شود
+            cout << "Invalid option!\n";
+        }
     }
 
     return 0;
