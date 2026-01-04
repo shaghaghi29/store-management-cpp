@@ -3,6 +3,14 @@
 
 using namespace std;
 
+// ساختار کالا
+struct Product
+{
+    string name;
+    double price;
+    int count;
+};
+
 int main()
 {
 
