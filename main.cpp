@@ -101,8 +101,45 @@ int main()
             break;
 
         case 4:
-            // نمايش کالاهاي کم موجود
+        {
+            // نمايش کالاهايي که تعدادشون کم است (کمتر از 5)
+
+            // اگر هنوز هيچ کالايي اضافه نشده باشد
+            if (n == 0)
+            {
+                cout << "No products available.\n";
+                break;
+            }
+
+            cout << "\n--- Low Stock Products ---\n";
+
+            int lowCount = 0;
+            // اين متغير مي‌شمارد چند تا کالاي کم‌موجود داريم
+
+            // بررسي تک‌تک کالاهاي ثبت شده
+            for (int i = 0; i < n; i++)
+            {
+
+                // اگر تعداد کالا کمتر از 5 بود، کم‌موجود حساب مي‌شود
+                if (products[i].count < 5)
+                {
+
+                    cout << "Name: " << products[i].name
+                         << " | Quantity: " << products[i].count << "\n";
+
+                    lowCount++;
+                    // يعني يک کالاي کم‌موجود پيدا شد
+                }
+            }
+
+            // اگر هيچ کالاي کم‌موجودي پيدا نشده بود
+            if (lowCount == 0)
+            {
+                cout << "All products have sufficient stock.\n";
+            }
+
             break;
+        }
 
         case 5:
             // جستجو بر اساس نام کالا
