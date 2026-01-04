@@ -14,6 +14,9 @@ struct Product
 int main()
 {
 
+    Product products[50]; // آرايه‌ي نگهداري کالاها
+    int n = 0;            // تعداد کالاهاي ثبت شده
+
     int number_menu;
 
     while (true)
@@ -38,12 +41,60 @@ int main()
         {
 
         case 1:
-            // اضافه کردن کالا (بعدا پياده‌سازي مي‌شود)
+        {
+            // اضافه کردن يک کالاي جديد به آرايه
+
+            if (n >= 50)
+            {
+                cout << "Storage is full. Cannot add more products.\n";
+                break;
+            }
+
+            // دريافت نام کالا از کاربر
+            cout << "Enter product name: ";
+            cin >> products[n].name;
+
+            // دريافت قيمت کالا
+            cout << "Enter product price: ";
+            cin >> products[n].price;
+
+            // دريافت تعداد کالا
+            cout << "Enter product quantity: ";
+            cin >> products[n].count;
+
+            // بعد از ذخيره کالا، شمارنده را يک واحد افزايش مي‌دهيم
+            n++;
+
+            cout << "Product added successfully.\n";
             break;
+        }
 
         case 2:
-            // نمايش کالاها
+        {
+            // نمايش همه کالاهاي ثبت شده
+
+            // اگر هنوز هيچ کالايي اضافه نشده باشد
+            if (n == 0)
+            {
+                cout << "No products to display.\n";
+                break;
+            }
+
+            // اگر کالا داريم، همه را چاپ مي‌کنيم
+            cout << "\n--- Product List ---\n";
+
+            // از اولين کالاي ثبت شده تا آخرين کالاي ثبت شده
+            for (int i = 0; i < n; i++)
+            {
+                cout << (i + 1) << ") "
+                     << "Name: " << products[i].name
+                     << " | Price: " << products[i].price
+                     << " | Quantity: " << products[i].count
+                     << "\n";
+            }
+
             break;
+        }
 
         case 3:
             // نمايش ارزش موجودي
