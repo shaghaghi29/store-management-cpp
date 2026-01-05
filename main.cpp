@@ -165,8 +165,52 @@ int main()
         }
 
         case 5:
-            // جستجو بر اساس نام کالا
+        {
+            // جستجو کالا بر اساس نام و نمايش همه موارد مشابه
+
+            if (n == 0)
+            {
+                cout << "No products available.\n";
+                break;
+            }
+
+            string searchName;
+            cout << "Enter product name to search: ";
+            cin >> searchName;
+
+            int foundCount = 0;
+            // تعداد کالاهايي که با اين نام پيدا مي‌شوند
+
+            cout << "\n--- Search Results ---\n";
+
+            for (int i = 0; i < n; i++)
+            {
+                if (products[i].name == searchName)
+                {
+
+                    double value = products[i].price * products[i].count;
+
+                    cout << (foundCount + 1) << ") "
+                         << "Name: " << products[i].name
+                         << " | Price: " << products[i].price
+                         << " | Quantity: " << products[i].count
+                         << " | Value: " << value << "\n";
+
+                    foundCount++;
+                }
+            }
+
+            if (foundCount == 0)
+            {
+                cout << "Product not found.\n";
+            }
+            else
+            {
+                cout << "Total matches: " << foundCount << "\n";
+            }
+
             break;
+        }
 
         case 6:
             // ذخيره اطلاعات در فايل
