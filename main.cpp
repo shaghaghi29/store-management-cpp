@@ -97,8 +97,31 @@ int main()
         }
 
         case 3:
-            // نمايش ارزش موجودي
+        {
+            // نمايش ارزش موجودي هر کالا (قيمت ضربدر تعداد)
+
+            // اگر هنوز هيچ کالايي اضافه نشده باشد
+            if (n == 0)
+            {
+                cout << "No products available.\n";
+                break;
+            }
+
+            cout << "\n--- Inventory Value (Price x Quantity) ---\n";
+
+            // براي هر کالا ارزش موجودي را حساب مي‌کنيم
+            for (int i = 0; i < n; i++)
+            {
+
+                double value = products[i].price * products[i].count;
+                // ارزش موجودي اين کالا = قيمت * تعداد
+
+                cout << "Name: " << products[i].name
+                     << " | Value: " << value << "\n";
+            }
+
             break;
+        }
 
         case 4:
         {
